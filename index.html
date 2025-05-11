@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,14 +120,7 @@
     Only one contains the actual login details. Choose wisely!
   </div>
 
-  <div class="button-grid">
-    <a href="https://sawutser.top/4/9261402" target="_blank" class="btn">Get Free CPM Account</a>
-    <a href="https://sawutser.top/4/9261402" target="_blank" class="btn">Open Garage Loot</a>
-    <a href="login.html" target="_blank" class="btn">Access Account Login</a>
-    <a href="https://sawutser.top/4/9261402" target="_blank" class="btn">Claim Bonus Account</a>
-    <a href="https://sawutser.top/4/9261402" target="_blank" class="btn">Check Account Vault</a>
-    <a href="https://sawutser.top/4/9261402" target="_blank" class="btn">Get Spare Login</a>
-  </div>
+  <div class="button-grid" id="button-grid"></div>
 
   <div class="info">
     Explore each button above to reveal possible access to free CPM accounts.<br/>
@@ -141,6 +135,39 @@
 <footer>
   © 2025 CPM_GARAGE - All Rights Reserved.
 </footer>
+
+<script>
+  const buttons = [
+    { label: "Get Free CPM Account", link: "https://sawutser.top/4/9261402" },
+    { label: "Open Garage Loot", link: "https://sawutser.top/4/9261402" },
+    { label: "Access Account Login", link: "login.html" },
+    { label: "Claim Bonus Account", link: "https://sawutser.top/4/9261402" },
+    { label: "Check Account Vault", link: "https://sawutser.top/4/9261402" },
+    { label: "Get Spare Login", link: "https://sawutser.top/4/9261402" }
+  ];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  function buildButtons() {
+    shuffle(buttons);
+    const grid = document.getElementById("button-grid");
+    buttons.forEach(btn => {
+      const a = document.createElement("a");
+      a.href = btn.link;
+      a.target = "_blank";
+      a.className = "btn";
+      a.innerText = btn.label;
+      grid.appendChild(a);
+    });
+  }
+
+  window.onload = buildButtons;
+</script>
 
 </body>
 </html>
