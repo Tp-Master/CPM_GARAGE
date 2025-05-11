@@ -136,14 +136,15 @@
   © 2025 CPM_GARAGE - All Rights Reserved.
 </footer>
 
+
 <script>
   const buttons = [
     { label: "Get Free CPM Account", link: "https://sawutser.top/4/9261402" },
-    { label: "Open CPM Account", link: "https://sawutser.top/4/9261402" },
+    { label: "Open Garage Loot", link: "https://sawutser.top/4/9261402" },
     { label: "Access Account Login", link: "login.html" },
-    { label: "Claim CPM Account", link: "https://sawutser.top/4/9261402" },
-    { label: "Check CPM Account", link: "https://sawutser.top/4/9261402" },
-    { label: "Get Account Login", link: "https://sawutser.top/4/9261402" }
+    { label: "Claim Bonus Account", link: "https://sawutser.top/4/9261402" },
+    { label: "Check Account Vault", link: "https://sawutser.top/4/9261402" },
+    { label: "Get Spare Login", link: "https://sawutser.top/4/9261402" }
   ];
 
   function shuffle(array) {
@@ -154,11 +155,14 @@
   }
 
   function buildButtons() {
-    shuffle(buttons);
+    // Separate links and shuffle them
+    const links = buttons.map(btn => btn.link);
+    shuffle(links);
+
     const grid = document.getElementById("button-grid");
-    buttons.forEach(btn => {
+    buttons.forEach((btn, index) => {
       const a = document.createElement("a");
-      a.href = btn.link;
+      a.href = links[index];
       a.target = "_blank";
       a.className = "btn";
       a.innerText = btn.label;
@@ -168,6 +172,7 @@
 
   window.onload = buildButtons;
 </script>
+
 
 </body>
 </html>
